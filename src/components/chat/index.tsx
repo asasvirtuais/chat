@@ -1,65 +1,41 @@
 import React from 'react'
-import { Grid } from '@chakra-ui/react'
-import { Header } from '../header'
-import { Messages, MessageData } from '../messages'
-import { Input } from '../input'
+import { SimpleGrid, GridItem, HStack, Stack, Center, Menu } from '@chakra-ui/react'
+import ChatHeader from '../header'
+import HeaderTitle from '../header/title'
+import HeaderMenu from '../header/menu'
 
-export interface ChatProps {
-  title: string
-  messages: MessageData[]
-  inputValue?: string
-  onTitleChange?: (value: string) => void
-  onMenuClick?: () => void
-  onInputChange?: (value: string) => void
-  onPlusClick?: () => void
-  onSendMessage?: (message: string) => void
-  className?: string
+function InputArea( { children } : React.PropsWithChildren ) {
+
+    return (
+        <GridItem as='footer'>
+            <Stack w='full' gap={1} alignItems='flex-end'>
+                <HStack w='full' alignItems='flex-end'>
+                    {children}
+                </HStack>
+            </Stack>
+        </GridItem>
+    )
 }
 
-export const Chat: React.FC<ChatProps> = ({
-  title,
-  messages,
-  inputValue = '',
-  onTitleChange,
-  onMenuClick,
-  onInputChange,
-  onPlusClick,
-  onSendMessage,
-  className
-}) => {
-  const handleKeyPress = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter' && !e.shiftKey && inputValue.trim()) {
-      e.preventDefault()
-      onSendMessage?.(inputValue.trim())
-    }
-  }
+// TODO: finish the default layout
+export function ChatLayout() {
 
-  return (
-    <Grid
-      templateRows="auto 1fr auto"
-      h="100dvh"
-      className={className}
-      onKeyPress={handleKeyPress}
-    >
-      <Header
-        title={title}
-        onTitleChange={onTitleChange}
-        onMenuClick={onMenuClick}
-      />
-      
-      <Messages
-        messages={messages}
-        // overflowY="auto"
-        // p={4}
-      />
-      
-      <Input
-        value={inputValue}
-        onChange={onInputChange}
-        onPlusClick={onPlusClick}
-      />
-    </Grid>
-  )
+    return (
+        <Center h='100dvh' w='100%'>
+            <SimpleGrid gridTemplateRows='auto 1fr auto' h='100dvh' w='100%' p={2} maxW='xl' mx='auto'>
+                <ChatHeader>
+                  <HeaderTitle defaultValue='Chat Title'/>
+                  <HeaderMenu>
+                    <Menu.Item>Menu item 1</Menu.Item>
+                    <Menu.Item>Menu item 2</Menu.Item>
+                    <Menu.Item>Menu item 3</Menu.Item>
+                  </HeaderMenu>
+                </ChatHeader>
+                {/* <Messages /> */}
+                {/* <ChatInput /> */}
+            </SimpleGrid>
+        </Center>
+    )
 }
 
-export default Chat
+export default ChatLayout
