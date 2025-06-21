@@ -1,42 +1,14 @@
 import React from 'react'
-import { HStack, IconButton } from '@chakra-ui/react'
-import { MoreVertical } from 'lucide-react'
-import { HeaderTitle } from './title'
+import { GridItem, HStack } from '@chakra-ui/react'
 
-export interface HeaderProps {
-  title: string
-  onTitleChange?: (value: string) => void
-  onMenuClick?: () => void
-  className?: string
-}
-
-export const Header: React.FC<HeaderProps> = ({ 
-  title,
-  onTitleChange,
-  onMenuClick,
-  className 
-}) => {
+export function ChatHeader( { children } : React.PropsWithChildren ) {
   return (
-    <HStack 
-      as="header" 
-      justifyContent="space-between" 
-      alignItems="center"
-      className={className}
-      p={4}
-    >
-      <HeaderTitle 
-        value={title} 
-        onChange={onTitleChange}
-        placeholder="Enter chat title..."
-      />
-      <IconButton
-        aria-label="Menu options"
-        size="sm"
-        variant="ghost"
-        onClick={onMenuClick}
-      ><MoreVertical /></IconButton>
-    </HStack>
+    <GridItem as='header'>
+        <HStack w='full' justifyContent='space-between'>
+            {children}
+        </HStack>
+    </GridItem>
   )
 }
 
-export default Header
+export default ChatHeader

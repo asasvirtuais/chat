@@ -1,37 +1,33 @@
+import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { ChakraProvider } from '@chakra-ui/react'
-import { Header } from './index'
+import { MenuItem } from '@chakra-ui/react'
+import { ChatHeader } from './index'
+import HeaderTitle from './title'
+import HeaderMenu from './menu'
 
-const meta: Meta<typeof Header> = {
+const meta: Meta<typeof ChatHeader> = {
   title: 'Components/Header',
-  component: Header,
+  component: ChatHeader,
   parameters: {
     layout: 'centered',
-  },
-  tags: ['autodocs'],
-  argTypes: {
-    onTitleChange: { action: 'title changed' },
-    onMenuClick: { action: 'menu clicked' },
-  },
+  }
 }
 
 export default meta
+
 type Story = StoryObj<typeof meta>
 
-export const Default: Story = {
+export const Header: Story = {
   args: {
-    title: 'Chat with AI Assistant',
-  },
-}
-
-export const LongTitle: Story = {
-  args: {
-    title: 'This is a very long chat title that might wrap or truncate',
-  },
-}
-
-export const EmptyTitle: Story = {
-  args: {
-    title: '',
-  },
+    children: (
+      <>
+        <HeaderTitle defaultValue='Chat Title' />
+        <HeaderMenu>
+          <MenuItem>Menu item 1</MenuItem>
+          <MenuItem>Menu item 2</MenuItem>
+          <MenuItem>Menu item 3</MenuItem>
+        </HeaderMenu>
+      </>
+    )
+  }
 }

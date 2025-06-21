@@ -6,7 +6,7 @@ export function HeaderTitle({
   onChange,
 }: {
   defaultValue: string,
-  onChange: (value: string) => void
+  onChange?: (value: string) => void
 }) {
   return (
     <Editable.Root
@@ -17,7 +17,7 @@ export function HeaderTitle({
       placeholder='Untitled'
       defaultValue={defaultValue}
       // @ts-expect-error weird...
-      onValueCommit={({value}) => onChange(value)}
+      onValueCommit={({value}) => onChange?.(value)}
     >
       <Editable.Preview />
       <Editable.Input />
