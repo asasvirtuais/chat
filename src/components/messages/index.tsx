@@ -1,33 +1,20 @@
 import React from 'react'
+import { Flex, GridItem } from '@chakra-ui/react'
 
-export interface MessageData {
-  id: string
-  content: string
-  author?: string
-  timestamp?: string
-  variant?: 'sent' | 'received'
-}
-
-export interface MessagesProps {
-  messages: MessageData[]
-  className?: string
-}
-
-export const Messages: React.FC<MessagesProps> = ({ messages, className }) => {
+export function ChatMessages( { children }: React.PropsWithChildren ) {
   return (
-    <div className={`messages ${className || ''}`}>
-      {messages.map((message) => (
-        <div 
-          key={message.id} 
-          className={`messages__item messages__item--${message.variant || 'received'}`}
-        >
-          {message.author && <div className="messages__author">{message.author}</div>}
-          <div className="messages__content">{message.content}</div>
-          {message.timestamp && <div className="messages__timestamp">{message.timestamp}</div>}
-        </div>
-      ))}
-    </div>
+    <GridItem as='main' display='block' overflowY='auto'>
+      <Flex
+          h='full'
+          flexDirection='column-reverse'
+          overflowY='auto'
+          w='full'
+          style={{ direction: 'ltr' }}
+          >
+          {children}
+      </Flex>
+    </GridItem>
   )
 }
 
-export default Messages
+export default ChatMessages
