@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { ChakraProvider, defaultSystem } from '@chakra-ui/react';
-import { Chat } from './index';
+import type { Meta, StoryObj } from '@storybook/react'
+import { ChakraProvider, defaultSystem } from '@chakra-ui/react'
+import { Chat } from './index'
 
 const meta: Meta<typeof Chat> = {
   title: 'Components/Chat',
@@ -16,10 +16,10 @@ const meta: Meta<typeof Chat> = {
     onPlusClick: { action: 'plus clicked' },
     onSendMessage: { action: 'message sent' },
   },
-};
+}
 
-export default meta;
-type Story = StoryObj<typeof meta>;
+export default meta
+type Story = StoryObj<typeof meta>
 
 const sampleMessages = [
   {
@@ -52,12 +52,12 @@ const sampleMessages = [
   },
   {
     id: '5',
-    content: 'Absolutely! Here\'s a simple example:\n\n```jsx\nconst [count, setCount] = useState(0);\n\nreturn (\n  <button onClick={() => setCount(count + 1)}>\n    Count: {count}\n  </button>\n);\n```',
+    content: 'Absolutely! Here\'s a simple example:\n\n```jsx\nconst [count, setCount] = useState(0)\n\nreturn (\n  <button onClick={() => setCount(count + 1)}>\n    Count: {count}\n  </button>\n)\n```',
     author: 'AI Assistant',
     timestamp: '10:34 AM',
     variant: 'received' as const,
   },
-];
+]
 
 export const Default: Story = {
   args: {
@@ -65,7 +65,7 @@ export const Default: Story = {
     messages: sampleMessages,
     inputValue: '',
   },
-};
+}
 
 export const EmptyChat: Story = {
   args: {
@@ -73,7 +73,7 @@ export const EmptyChat: Story = {
     messages: [],
     inputValue: '',
   },
-};
+}
 
 export const WithTypedMessage: Story = {
   args: {
@@ -81,7 +81,7 @@ export const WithTypedMessage: Story = {
     messages: sampleMessages,
     inputValue: 'Thanks! This is very helpful.',
   },
-};
+}
 
 export const LongTitle: Story = {
   args: {
@@ -89,4 +89,4 @@ export const LongTitle: Story = {
     messages: sampleMessages.slice(0, 2),
     inputValue: '',
   },
-};
+}

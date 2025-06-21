@@ -1,15 +1,15 @@
-import React from 'react';
-import { Textarea as ChakraTextarea } from '@chakra-ui/react';
+import React from 'react'
+import { Textarea as ChakraTextarea } from '@chakra-ui/react'
 
 export interface TextareaProps {
-  value?: string;
-  onChange?: (value: string) => void;
-  placeholder?: string;
-  className?: string;
-  disabled?: boolean;
-  minH?: string;
-  maxH?: string;
-  maxLength?: number;
+  value?: string
+  onChange?: (value: string) => void
+  placeholder?: string
+  className?: string
+  disabled?: boolean
+  minH?: string
+  maxH?: string
+  maxLength?: number
 }
 
 export const Textarea: React.FC<TextareaProps> = ({ 
@@ -34,7 +34,7 @@ export const Textarea: React.FC<TextareaProps> = ({
       maxLength={maxLength}
       resize="vertical"
     />
-  );
-};
+  )
+}
 
-export default Textarea;
+export default Textarea

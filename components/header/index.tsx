@@ -1,13 +1,13 @@
-import React from 'react';
-import { HStack, IconButton } from '@chakra-ui/react';
-import { MoreVertical } from 'lucide-react';
-import { HeaderTitle } from './title';
+import React from 'react'
+import { HStack, IconButton } from '@chakra-ui/react'
+import { MoreVertical } from 'lucide-react'
+import { HeaderTitle } from './title'
 
 export interface HeaderProps {
-  title: string;
-  onTitleChange?: (value: string) => void;
-  onMenuClick?: () => void;
-  className?: string;
+  title: string
+  onTitleChange?: (value: string) => void
+  onMenuClick?: () => void
+  className?: string
 }
 
 export const Header: React.FC<HeaderProps> = ({ 
@@ -36,7 +36,7 @@ export const Header: React.FC<HeaderProps> = ({
         onClick={onMenuClick}
       ><MoreVertical /></IconButton>
     </HStack>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

@@ -1,11 +1,11 @@
-import React from 'react';
+import React from 'react'
 
 export interface MessageProps {
-  content: string;
-  author?: string;
-  timestamp?: string;
-  className?: string;
-  variant?: 'sent' | 'received';
+  content: string
+  author?: string
+  timestamp?: string
+  className?: string
+  variant?: 'sent' | 'received'
 }
 
 export const Message: React.FC<MessageProps> = ({ 
@@ -21,7 +21,7 @@ export const Message: React.FC<MessageProps> = ({
       <div className="message__content">{content}</div>
       {timestamp && <div className="message__timestamp">{timestamp}</div>}
     </div>
-  );
-};
+  )
+}
 
-export default Message;
+export default Message

@@ -1,19 +1,19 @@
-import React from 'react';
-import { Grid } from '@chakra-ui/react';
-import { Header } from '../header';
-import { Messages, MessageData } from '../messages';
-import { Input } from '../input';
+import React from 'react'
+import { Grid } from '@chakra-ui/react'
+import { Header } from '../header'
+import { Messages, MessageData } from '../messages'
+import { Input } from '../input'
 
 export interface ChatProps {
-  title: string;
-  messages: MessageData[];
-  inputValue?: string;
-  onTitleChange?: (value: string) => void;
-  onMenuClick?: () => void;
-  onInputChange?: (value: string) => void;
-  onPlusClick?: () => void;
-  onSendMessage?: (message: string) => void;
-  className?: string;
+  title: string
+  messages: MessageData[]
+  inputValue?: string
+  onTitleChange?: (value: string) => void
+  onMenuClick?: () => void
+  onInputChange?: (value: string) => void
+  onPlusClick?: () => void
+  onSendMessage?: (message: string) => void
+  className?: string
 }
 
 export const Chat: React.FC<ChatProps> = ({
@@ -29,10 +29,10 @@ export const Chat: React.FC<ChatProps> = ({
 }) => {
   const handleKeyPress = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' && !e.shiftKey && inputValue.trim()) {
-      e.preventDefault();
-      onSendMessage?.(inputValue.trim());
+      e.preventDefault()
+      onSendMessage?.(inputValue.trim())
     }
-  };
+  }
 
   return (
     <Grid
@@ -60,7 +60,7 @@ export const Chat: React.FC<ChatProps> = ({
         p={4}
       />
     </Grid>
-  );
-};
+  )
+}
 
-export default Chat;
+export default Chat

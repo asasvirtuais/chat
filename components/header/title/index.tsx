@@ -1,13 +1,13 @@
-import React from 'react';
-import { Editable, EditableInput, EditablePreview } from '@chakra-ui/react';
+import React from 'react'
+import { Editable, EditableInput, EditablePreview } from '@chakra-ui/react'
 
 export interface HeaderTitleProps {
-  value: string;
-  onChange?: (value: string) => void;
-  placeholder?: string;
-  className?: string;
-  fontSize?: string;
-  fontWeight?: string;
+  value: string
+  onChange?: (value: string) => void
+  placeholder?: string
+  className?: string
+  fontSize?: string
+  fontWeight?: string
 }
 
 export const HeaderTitle: React.FC<HeaderTitleProps> = ({ 
@@ -30,7 +30,7 @@ export const HeaderTitle: React.FC<HeaderTitleProps> = ({
       <EditablePreview />
       <EditableInput />
     </Editable.Root>
-  );
-};
+  )
+}
 
-export default HeaderTitle;
+export default HeaderTitle

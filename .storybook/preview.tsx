@@ -1,3 +1,4 @@
+import React from 'react'
 import type { Preview } from '@storybook/react'
 
 import { ChakraProvider, defaultSystem } from '@chakra-ui/react'

@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { Messages } from './index';
+import type { Meta, StoryObj } from '@storybook/react'
+import { Messages } from './index'
 
 const meta: Meta<typeof Messages> = {
   title: 'Components/Messages',
@@ -8,10 +8,10 @@ const meta: Meta<typeof Messages> = {
     layout: 'centered',
   },
   tags: ['autodocs'],
-};
+}
 
-export default meta;
-type Story = StoryObj<typeof meta>;
+export default meta
+type Story = StoryObj<typeof meta>
 
 const sampleMessages = [
   {
@@ -35,22 +35,22 @@ const sampleMessages = [
     timestamp: '10:32 AM',
     variant: 'received' as const,
   },
-];
+]
 
 export const Default: Story = {
   args: {
     messages: sampleMessages,
   },
-};
+}
 
 export const Empty: Story = {
   args: {
     messages: [],
   },
-};
+}
 
 export const SingleMessage: Story = {
   args: {
     messages: [sampleMessages[0]],
   },
-};
+}

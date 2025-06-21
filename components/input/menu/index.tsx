@@ -1,18 +1,18 @@
-import React from 'react';
+import React from 'react'
 
 export interface InputMenuItemData {
-  id: string;
-  label: string;
-  value: string;
-  onClick?: (value: string) => void;
-  disabled?: boolean;
+  id: string
+  label: string
+  value: string
+  onClick?: (value: string) => void
+  disabled?: boolean
 }
 
 export interface InputMenuProps {
-  items: InputMenuItemData[];
-  onSelect?: (value: string) => void;
-  className?: string;
-  placeholder?: string;
+  items: InputMenuItemData[]
+  onSelect?: (value: string) => void
+  className?: string
+  placeholder?: string
 }
 
 export const InputMenu: React.FC<InputMenuProps> = ({ 
@@ -21,19 +21,19 @@ export const InputMenu: React.FC<InputMenuProps> = ({
   className, 
   placeholder = 'Select an option...' 
 }) => {
-  const [isOpen, setIsOpen] = React.useState(false);
-  const [selectedValue, setSelectedValue] = React.useState('');
+  const [isOpen, setIsOpen] = React.useState(false)
+  const [selectedValue, setSelectedValue] = React.useState('')
 
   const handleSelect = (item: InputMenuItemData) => {
     if (!item.disabled) {
-      setSelectedValue(item.value);
-      setIsOpen(false);
-      item.onClick?.(item.value);
-      onSelect?.(item.value);
+      setSelectedValue(item.value)
+      setIsOpen(false)
+      item.onClick?.(item.value)
+      onSelect?.(item.value)
     }
-  };
+  }
 
-  const selectedItem = items.find(item => item.value === selectedValue);
+  const selectedItem = items.find(item => item.value === selectedValue)
 
   return (
     <div className={`input-menu ${className || ''}`}>
@@ -61,7 +61,7 @@ export const InputMenu: React.FC<InputMenuProps> = ({
         </ul>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default InputMenu;
+export default InputMenu

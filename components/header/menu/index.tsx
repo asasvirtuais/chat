@@ -1,15 +1,15 @@
-import React from 'react';
+import React from 'react'
 
 export interface MenuItemData {
-  id: string;
-  label: string;
-  onClick?: () => void;
-  disabled?: boolean;
+  id: string
+  label: string
+  onClick?: () => void
+  disabled?: boolean
 }
 
 export interface HeaderMenuProps {
-  items: MenuItemData[];
-  className?: string;
+  items: MenuItemData[]
+  className?: string
 }
 
 export const HeaderMenu: React.FC<HeaderMenuProps> = ({ items, className }) => {
@@ -29,7 +29,7 @@ export const HeaderMenu: React.FC<HeaderMenuProps> = ({ items, className }) => {
         ))}
       </ul>
     </nav>
-  );
-};
+  )
+}
 
-export default HeaderMenu;
+export default HeaderMenu

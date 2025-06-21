@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { MessageMenu } from './index';
+import type { Meta, StoryObj } from '@storybook/react'
+import { MessageMenu } from './index'
 
 const meta: Meta<typeof MessageMenu> = {
   title: 'Components/Message/Menu',
@@ -8,10 +8,10 @@ const meta: Meta<typeof MessageMenu> = {
     layout: 'centered',
   },
   tags: ['autodocs'],
-};
+}
 
-export default meta;
-type Story = StoryObj<typeof meta>;
+export default meta
+type Story = StoryObj<typeof meta>
 
 const sampleMenuItems = [
   {
@@ -32,13 +32,13 @@ const sampleMenuItems = [
     onClick: () => console.log('Delete clicked'),
     icon: '🗑️',
   },
-];
+]
 
 export const Default: Story = {
   args: {
     items: sampleMenuItems,
   },
-};
+}
 
 export const WithDisabled: Story = {
   args: {
@@ -52,14 +52,14 @@ export const WithDisabled: Story = {
       },
     ],
   },
-};
+}
 
 export const CustomTrigger: Story = {
   args: {
     items: sampleMenuItems,
     trigger: '⚙️',
   },
-};
+}
 
 export const WithoutIcons: Story = {
   args: {
@@ -81,4 +81,4 @@ export const WithoutIcons: Story = {
       },
     ],
   },
-};
+}

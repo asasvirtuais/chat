@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { ChakraProvider } from '@chakra-ui/react';
-import { HeaderTitle } from './index';
+import type { Meta, StoryObj } from '@storybook/react'
+import { ChakraProvider } from '@chakra-ui/react'
+import { HeaderTitle } from './index'
 
 const meta: Meta<typeof HeaderTitle> = {
   title: 'Components/Header/Title',
@@ -22,15 +22,15 @@ const meta: Meta<typeof HeaderTitle> = {
   }
 }
 
-export default meta;
-type Story = StoryObj<typeof meta>;
+export default meta
+type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   args: {
     value: 'Chat Title',
     placeholder: 'Enter title...',
   },
-};
+}
 
 export const Large: Story = {
   args: {
@@ -38,7 +38,7 @@ export const Large: Story = {
     fontSize: '2xl',
     fontWeight: 'bold',
   },
-};
+}
 
 export const Medium: Story = {
   args: {
@@ -46,11 +46,11 @@ export const Medium: Story = {
     fontSize: 'lg',
     fontWeight: 'semibold',
   },
-};
+}
 
 export const Empty: Story = {
   args: {
     value: '',
     placeholder: 'Click to edit title...',
   },
-};
+}

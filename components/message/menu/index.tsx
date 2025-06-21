@@ -1,17 +1,17 @@
-import React from 'react';
+import React from 'react'
 
 export interface MessageMenuItemData {
-  id: string;
-  label: string;
-  onClick?: () => void;
-  disabled?: boolean;
-  icon?: React.ReactNode;
+  id: string
+  label: string
+  onClick?: () => void
+  disabled?: boolean
+  icon?: React.ReactNode
 }
 
 export interface MessageMenuProps {
-  items: MessageMenuItemData[];
-  className?: string;
-  trigger?: React.ReactNode;
+  items: MessageMenuItemData[]
+  className?: string
+  trigger?: React.ReactNode
 }
 
 export const MessageMenu: React.FC<MessageMenuProps> = ({ 
@@ -19,28 +19,28 @@ export const MessageMenu: React.FC<MessageMenuProps> = ({
   className, 
   trigger = '⋯' 
 }) => {
-  const [isOpen, setIsOpen] = React.useState(false);
-  const menuRef = React.useRef<HTMLDivElement>(null);
+  const [isOpen, setIsOpen] = React.useState(false)
+  const menuRef = React.useRef<HTMLDivElement>(null)
 
   React.useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-        setIsOpen(false);
+        setIsOpen(false)
       }
-    };
+    }
 
-    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('mousedown', handleClickOutside)
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, []);
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [])
 
   const handleItemClick = (item: MessageMenuItemData) => {
     if (!item.disabled) {
-      item.onClick?.();
-      setIsOpen(false);
+      item.onClick?.()
+      setIsOpen(false)
     }
-  };
+  }
 
   return (
     <div className={`message-menu ${className || ''}`} ref={menuRef}>
@@ -69,7 +69,7 @@ export const MessageMenu: React.FC<MessageMenuProps> = ({
         </ul>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default MessageMenu;
+export default MessageMenu

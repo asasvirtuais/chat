@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { HeaderMenu } from './index';
+import type { Meta, StoryObj } from '@storybook/react'
+import { HeaderMenu } from './index'
 
 const meta: Meta<typeof HeaderMenu> = {
   title: 'Components/Header/Menu',
@@ -13,10 +13,10 @@ const meta: Meta<typeof HeaderMenu> = {
       control: 'object',
     },
   },
-};
+}
 
-export default meta;
-type Story = StoryObj<typeof meta>;
+export default meta
+type Story = StoryObj<typeof meta>
 
 const sampleMenuItems = [
   {
@@ -34,13 +34,13 @@ const sampleMenuItems = [
     label: 'Contact',
     onClick: () => console.log('Contact clicked'),
   },
-];
+]
 
 export const Default: Story = {
   args: {
     items: sampleMenuItems,
   },
-};
+}
 
 export const WithDisabled: Story = {
   args: {
@@ -53,10 +53,10 @@ export const WithDisabled: Story = {
       },
     ],
   },
-};
+}
 
 export const Empty: Story = {
   args: {
     items: [],
   },
-};
+}

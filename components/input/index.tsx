@@ -1,14 +1,14 @@
-import React from 'react';
-import { HStack, IconButton, Textarea } from '@chakra-ui/react';
-import { Plus } from 'lucide-react';
+import React from 'react'
+import { HStack, IconButton, Textarea } from '@chakra-ui/react'
+import { Plus } from 'lucide-react'
 
 export interface InputProps {
-  value?: string;
-  onChange?: (value: string) => void;
-  placeholder?: string;
-  disabled?: boolean;
-  onPlusClick?: () => void;
-  className?: string;
+  value?: string
+  onChange?: (value: string) => void
+  placeholder?: string
+  disabled?: boolean
+  onPlusClick?: () => void
+  className?: string
 }
 
 export const Input: React.FC<InputProps> = ({ 
@@ -39,7 +39,7 @@ export const Input: React.FC<InputProps> = ({
         flex={1}
       />
     </HStack>
-  );
-};
+  )
+}
 
-export default Input;
+export default Input

@@ -1,16 +1,16 @@
-import React from 'react';
+import React from 'react'
 
 export interface MessageData {
-  id: string;
-  content: string;
-  author?: string;
-  timestamp?: string;
-  variant?: 'sent' | 'received';
+  id: string
+  content: string
+  author?: string
+  timestamp?: string
+  variant?: 'sent' | 'received'
 }
 
 export interface MessagesProps {
-  messages: MessageData[];
-  className?: string;
+  messages: MessageData[]
+  className?: string
 }
 
 export const Messages: React.FC<MessagesProps> = ({ messages, className }) => {
@@ -27,7 +27,7 @@ export const Messages: React.FC<MessagesProps> = ({ messages, className }) => {
         </div>
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default Messages;
+export default Messages
