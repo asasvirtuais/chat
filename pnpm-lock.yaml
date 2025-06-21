@@ -14,6 +14,9 @@ importers:
       '@emotion/react':
         specifier: ^11.14.0
         version: 11.14.0(@types/react@19.1.8)(react@19.1.0)
+      asasvirtuais-apis:
+        specifier: ^0.1.0
+        version: 0.1.0
       lucide-react:
         specifier: ^0.513.0
         version: 0.513.0(react@19.1.0)
@@ -32,6 +35,9 @@ importers:
       vite-tsconfig-paths:
         specifier: ^5.1.4
         version: 5.1.4(typescript@5.8.3)(vite@6.3.5(@types/node@20.19.1))
+      zod:
+        specifier: ^3.25.67
+        version: 3.25.67
     devDependencies:
       '@chromatic-com/storybook':
         specifier: ^4.0.0
@@ -898,6 +904,18 @@ packages:
     resolution: {integrity: sha512-COROpnaoap1E2F000S62r6A60uHZnmlvomhfyT2DlTcrY1OrBKn2UhH7qn5wTC9zMvD0AY7csdPSNwKP+7WiQw==}
     engines: {node: '>= 0.4'}
 
+  asasvirtuais-apis@0.1.0:
+    resolution: {integrity: sha512-hrwkdSbql8xskR0iJNIP9o9OcjfxDwrsELdkIFaISu2c58bl5uSy2GD1t08ZTutpiFKFPHw551lqxodRUoxABA==}
+
+  asasvirtuais-blueprint@2.0.2:
+    resolution: {integrity: sha512-5JywiR1ohj4auQz8Y/ftQsOG6uRfcg/3tB62M5Aq/CHL/a4ejE2wHmoKApn7tK0M/a/YqRSOYA/vYoIVGuAFIw==}
+
+  asasvirtuais-react@1.0.3:
+    resolution: {integrity: sha512-8MGBJ0Lewps3Ulke0RwygbB8/IMDXJ2FaBYwo0HEFJMwiHWCI5wyNoHZbHxfkvDbySuswbuMI/qr/BAjAbYKjw==}
+
+  asasvirtuais-tools@0.1.0:
+    resolution: {integrity: sha512-HGtWwBavMLIfO5WY/L4cLamgMD2N9udPHDz38hO/5+xTGqmv/fRTDFHxIAmh/J5KMcw+FbHFJL2wPw4muTJfZA==}
+
   assertion-error@2.0.1:
     resolution: {integrity: sha512-Izi8RQcffqCeNVgFigKli1ssklIbpHnCYc6AknXGYoB6grJqyeby7jv12JUQgmTAnIDnbck1uxksT4dzN3PWBA==}
     engines: {node: '>=12'}
@@ -1608,6 +1626,9 @@ packages:
   yocto-queue@1.2.1:
     resolution: {integrity: sha512-AyeEbWOu/TAXdxlV9wmGcR0+yh2j3vYPGOECcIj2S7MkrLyC7ne+oye2BKTItt0ii2PHk4cDy+95+LshzbXnGg==}
     engines: {node: '>=12.20'}
+
+  zod@3.25.67:
+    resolution: {integrity: sha512-idA2YXwpCdqUSKRCACDE6ItZD9TZzy3OZMtpfLoh6oPR47lipysRrJfjzMqFxQ3uJuUPyUeWe1r9vLH33xO/Qw==}
 
 snapshots:
 
@@ -2771,6 +2792,24 @@ snapshots:
 
   aria-query@5.3.2: {}
 
+  asasvirtuais-apis@0.1.0:
+    dependencies:
+      asasvirtuais-blueprint: 2.0.2
+      asasvirtuais-react: 1.0.3
+      asasvirtuais-tools: 0.1.0
+
+  asasvirtuais-blueprint@2.0.2:
+    dependencies:
+      zod: 3.25.67
+
+  asasvirtuais-react@1.0.3:
+    dependencies:
+      react: 19.1.0
+
+  asasvirtuais-tools@0.1.0:
+    dependencies:
+      asasvirtuais-blueprint: 2.0.2
+
   assertion-error@2.0.1: {}
 
   ast-types@0.16.1:
@@ -3395,3 +3434,5 @@ snapshots:
   yaml@1.10.2: {}
 
   yocto-queue@1.2.1: {}
+
+  zod@3.25.67: {}
