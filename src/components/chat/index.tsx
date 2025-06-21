@@ -57,7 +57,6 @@ export const Chat: React.FC<ChatProps> = ({
         value={inputValue}
         onChange={onInputChange}
         onPlusClick={onPlusClick}
-        p={4}
       />
     </Grid>
   )

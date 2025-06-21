@@ -15,8 +15,8 @@ importers:
         specifier: ^11.14.0
         version: 11.14.0(@types/react@19.1.8)(react@19.1.0)
       asasvirtuais-apis:
-        specifier: ^0.1.0
-        version: 0.1.0
+        specifier: ^0.1.2
+        version: 0.1.2
       lucide-react:
         specifier: ^0.513.0
         version: 0.513.0(react@19.1.0)
@@ -904,8 +904,8 @@ packages:
     resolution: {integrity: sha512-COROpnaoap1E2F000S62r6A60uHZnmlvomhfyT2DlTcrY1OrBKn2UhH7qn5wTC9zMvD0AY7csdPSNwKP+7WiQw==}
     engines: {node: '>= 0.4'}
 
-  asasvirtuais-apis@0.1.0:
-    resolution: {integrity: sha512-hrwkdSbql8xskR0iJNIP9o9OcjfxDwrsELdkIFaISu2c58bl5uSy2GD1t08ZTutpiFKFPHw551lqxodRUoxABA==}
+  asasvirtuais-apis@0.1.2:
+    resolution: {integrity: sha512-htmMbFP1bawrlBLE4y/+TNQhJwmDto7b7ibfFjYXIpFqdqZjf/Y99a/PNHCXNRfuIypTm64THS4htF3LZdLahQ==}
 
   asasvirtuais-blueprint@2.0.2:
     resolution: {integrity: sha512-5JywiR1ohj4auQz8Y/ftQsOG6uRfcg/3tB62M5Aq/CHL/a4ejE2wHmoKApn7tK0M/a/YqRSOYA/vYoIVGuAFIw==}
@@ -2792,7 +2792,7 @@ snapshots:
 
   aria-query@5.3.2: {}
 
-  asasvirtuais-apis@0.1.0:
+  asasvirtuais-apis@0.1.2:
     dependencies:
       asasvirtuais-blueprint: 2.0.2
       asasvirtuais-react: 1.0.3

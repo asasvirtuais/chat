@@ -1,34 +1,26 @@
 import React from 'react'
-import { Editable, EditableInput, EditablePreview } from '@chakra-ui/react'
+import { Editable, HStack } from '@chakra-ui/react'
 
-export interface HeaderTitleProps {
-  value: string
-  onChange?: (value: string) => void
-  placeholder?: string
-  className?: string
-  fontSize?: string
-  fontWeight?: string
-}
-
-export const HeaderTitle: React.FC<HeaderTitleProps> = ({ 
-  value,
+export function HeaderTitle({
+  defaultValue,
   onChange,
-  placeholder = 'Enter title...',
-  className,
-  fontSize = 'xl',
-  fontWeight = 'bold'
-}) => {
+}: {
+  defaultValue: string,
+  onChange: (value: string) => void
+}) {
   return (
     <Editable.Root
-      value={value}
-      // onChange={onChange}
-      placeholder={placeholder}
-      className={className}
-      fontSize={fontSize}
-      fontWeight={fontWeight}
+      justifyContent='flex-start'
+      size='lg'
+      fontSize='xl'
+      my={2}
+      placeholder='Untitled'
+      defaultValue={defaultValue}
+      // @ts-expect-error weird...
+      onValueCommit={({value}) => onChange(value)}
     >
-      <EditablePreview />
-      <EditableInput />
+      <Editable.Preview />
+      <Editable.Input />
     </Editable.Root>
   )
 }
