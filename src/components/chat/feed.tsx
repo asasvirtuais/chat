@@ -92,7 +92,8 @@ export function ChatFeedLayout({
       w="100vw"
       templateRows="1fr auto"
       templateColumns={templateColumns}
-      gap={0}
+      gap={2}
+      p={2}
     >
       {/* Chat Header and Messages - Top Left */}
       <GridItem

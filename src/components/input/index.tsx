@@ -3,9 +3,9 @@ import { GridItem, Stack, HStack } from '@chakra-ui/react'
 
 export function ChatInput({ children, ...props }: React.PropsWithChildren<React.DetailedHTMLProps<React.FormHTMLAttributes<HTMLFormElement>, HTMLFormElement>>) {
   return (
-    <GridItem as='footer'>
-      <Stack w='full' gap={1} alignItems='flex-end'>
-        <HStack w='full' alignItems='flex-end' asChild>
+    <GridItem as='footer' w='full'>
+      <Stack w='full' gap={1} alignItems='center'>
+        <HStack w='full' alignItems='center' asChild>
           <form {...props}>
             {children}
           </form>
