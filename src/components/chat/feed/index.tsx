@@ -6,17 +6,17 @@ import { HeaderMenu } from '../../header/menu'
 
 export function Main({ children, ...props } : GridItemProps) {
   return (
-    <GridItem h='100%' {...props}>
+    <Box h='100%' {...props}>
       {children}
-    </GridItem>
+    </Box>
   )
 }
 
 export function Feed({ children, ...props } : GridItemProps) {
   return (
-    <GridItem h='100%' {...props}>
+    <Box h='100%' {...props}>
       {children}
-    </GridItem>
+    </Box>
   )
 }
 
@@ -24,9 +24,9 @@ import { RiSideBarLine } from 'react-icons/ri'
 import { ChatLayout } from '../../chat'
 import ChatMessages from '../../messages'
 import ChatInput from '../../input'
-import InputTextarea from 'components/input/textarea'
-import { InputSend } from 'components/input/send'
-import InputMenu from 'components/input/menu'
+import InputTextarea from '../../input/textarea'
+import { InputSend } from '../../input/send'
+import InputMenu from '../../input/menu'
 
 export function ChatFeedLayout() {
   const { open, onOpen, onClose } = useDisclosure()
@@ -67,8 +67,8 @@ export function ChatFeedLayout() {
             </ChatInput>
           </ChatLayout>
         </Main>
-        <Feed position='relative' w={open ? '100dvw' : '0px'} maxW={{base: '100%', md: '33.33%'}} overflow='hidden'>
-          <CloseButton m={4} position='absolute' right={0} onClick={onClose} />
+        <Feed w={open ? '100dvw' : '0px'} maxW={{base: '100%', md: '33.33%'}} overflow='hidden'>
+          <CloseButton m={4} onClick={onClose} />
           <Box p={4}>
             <Heading>Feed</Heading>
           </Box>
