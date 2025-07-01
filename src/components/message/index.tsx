@@ -24,7 +24,12 @@ export const ChatMessage = ({
   markdown?: boolean
   avatar?: string
   menu?: React.ReactNode
-  files?: File[]
+  files?: {
+    name: string
+    type: string
+    url?: string
+    content?: string
+  }[]
   loading?: boolean
   username: string
 }) => {

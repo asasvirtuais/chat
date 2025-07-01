@@ -15,11 +15,6 @@ interface MessageFileProps {
 
 export const MessageFile = ({ container, file }: MessageFileProps) => {
 
-  const fileUrl = React.useMemo(() => 
-    file.url || URL.createObjectURL(file), 
-    [file.url, file]
-  )
-
   return (
     <Collapsible.Root>
       {/* @ts-expect-error typescript issue */}
@@ -54,9 +49,9 @@ export const MessageFile = ({ container, file }: MessageFileProps) => {
       <Portal container={container}>
         <Collapsible.Content>
           <Box p={3} borderLeft="2px solid" borderColor="gray.200">
-            {file.type.startsWith('video/') && <video style={{width: '100%'}} src={fileUrl} controls />}
-            {file.type.startsWith('audio/') && <audio style={{width: '100%'}} src={fileUrl} controls />}
-            {file.type.startsWith('image/') && (<Image src={fileUrl} alt={file.name} style={{ maxWidth: '100%' }} />)}
+            {file.type.startsWith('video/') && <video style={{width: '100%'}} src={file.url} controls />}
+            {file.type.startsWith('audio/') && <audio style={{width: '100%'}} src={file.url} controls />}
+            {file.type.startsWith('image/') && (<Image src={file.url} alt={file.name} style={{ maxWidth: '100%' }} />)}
             {file.type === 'text/markdown' || file.name.endsWith('.md') && (
               <Box position="relative">
                 <Box position="absolute" top={2} right={2}>
@@ -88,7 +83,7 @@ export const MessageFile = ({ container, file }: MessageFileProps) => {
               </Box>
             )}
             <Link
-              href={fileUrl} 
+              href={file.url} 
               download={file.name}
               display='inline-block'
               padding='8px 16px'
