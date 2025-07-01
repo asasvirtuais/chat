@@ -3,12 +3,16 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { ChatInput } from './index'
 import InputTextarea from './textarea'
 import InputMenu from './menu'
-import { MenuItem } from '@chakra-ui/react'
+import { Box, MenuItem } from '@chakra-ui/react'
 import { InputSend } from './send'
 
 const meta: Meta<typeof ChatInput> = {
   title: 'Components/Input',
-  component: ChatInput,
+  component: ({children}) => (
+    <Box h='100dvh' display='flex' alignItems='flex-end' justifyContent='flex-end'>
+      <ChatInput>{children}</ChatInput>
+    </Box>
+  ),
 }
 
 export default meta
