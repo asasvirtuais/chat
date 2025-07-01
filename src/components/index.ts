@@ -1,5 +1,5 @@
 export { default as ChatLayout } from './chat'
-export { ChatFeedLayout } from './chat/feed'
+export { ChatFeedLayout, Main } from './chat/feed'
 export { default as ChatHeader } from './header'
 export { default as HeaderTitle } from './header/title'
 export { default as HeaderMenu } from './header/menu'
