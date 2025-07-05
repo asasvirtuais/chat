@@ -39,7 +39,6 @@ export function HeaderMenu({ children, onToggleFeed }: HeaderMenuProps) {
       )}
 
       <Menu.Root closeOnSelect={false}>
-        {/* @ts-expect-error dunno */}
         <Menu.Trigger asChild>
           <IconButton
             aria-label="open-menu"
