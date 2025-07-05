@@ -52,7 +52,7 @@ export function ChatFeedLayout() {
               </HeaderMenu>
             </ChatHeader>
             <ChatMessages>
-              <Editable.Root plaholder='System instructions'>
+              <Editable.Root placeholder='System instructions'>
                 <Editable.Preview/>
                 <Editable.Textarea/>
               </Editable.Root>
